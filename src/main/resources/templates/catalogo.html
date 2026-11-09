@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de materias</title>
+</head>
+<body>
+    <h1>Catálogo de materias</h1>
+    <p>Autor: <span th:text="${autor}"></span></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Materia</th>
+                <th scope="col">Área</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="materia : ${materias}">
+                <td th:text="${materia.id}"></td>
+                <td th:text="${materia.nombre}"></td>
+                <td th:text="${materia.area}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
